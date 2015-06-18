@@ -34,13 +34,13 @@ module.exports = function(grunt) {
       },
       css:{
         options:{
-          livereload:true
+          livereload:false
         },
         files:['public/css/**/*.css']
       },
       pages:{
         options:{
-          livereload:true
+          livereload:false
         },
         files:['public/**/*.html']
       }

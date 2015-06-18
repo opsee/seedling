@@ -1,6 +1,6 @@
 .nav-tabs {
   border-bottom: 0;
-  @include display-flex;
+  @include display-flex();
   > li {
     @extend .flex-1;
     > a {

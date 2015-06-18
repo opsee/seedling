@@ -1,2 +1,12 @@
 @import "breakpoint";
+@import "mixins";
+@import "fonts";
+@import "ngActivityIndicator";
+@import "opsee-variables";
+@import "bootstrap-variables";
+@import "bootstrap";
 @import "module";
+//compass should come after bootstrap for this reason:
+//https://github.com/Compass/compass/issues/289#issuecomment-81999241
+@import "compass";
+@import "compass/css3/deprecated-support";
