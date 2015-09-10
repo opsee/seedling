@@ -15,6 +15,6 @@ module.exports = {
   "gray700":"#616161",
   "gray800":"#424242",
   "gray900":"#212121",
-  "textColor":"rgba(white, 0.85)",
-  'textColorSecondary':"rgba(white, 0.54)"
+  "textColor":"rgba(255, 255, 255, 0.85)",
+  'textColorSecondary':"rgba(255, 255, 255, 0.54)"
 }
