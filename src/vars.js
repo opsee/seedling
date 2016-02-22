@@ -24,7 +24,7 @@ var obj = {
   font: {
     gotham: '"Gotham SSm A", "Gotham SSm B", sans-serif',
     tungsten: '"Tungsten A", "Tungsten B", sans-serif',
-    mono: '"Droid Sans Mon", "InconsolataMedium", monospace'
+    mono: '"Droid Sans Mono", "InconsolataMedium", monospace'
   },
   shadow: {
     bottomZ1: '0 2px 5px 0 rgba(0, 0, 0, 0.26)',
