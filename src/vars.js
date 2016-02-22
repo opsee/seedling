@@ -38,10 +38,10 @@ var obj = {
 
 function flatten(obj){
   var data = {};
-  Object.keys(obj).forEach(key => {
+  Object.keys(obj).forEach(function(key){
     var parent = obj[key];
     var childKeys = Object.keys(parent);
-    childKeys.forEach(ck => {
+    childKeys.forEach(function(ck){
       var capitalized = ck.charAt(0).toUpperCase() + ck.slice(1);
       data[key + capitalized] = parent[ck];
     });
