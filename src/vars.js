@@ -49,9 +49,7 @@ function flatten(obj){
   return data;
 }
 
-module.exports = function(kwargs){
-  if (kwargs && kwargs.plain){
-    return obj;
-  }
-  return flatten(obj);
+module.exports = {
+  flat: flatten(obj),
+  plain: obj
 }

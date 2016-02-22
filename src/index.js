@@ -1,5 +1,3 @@
 var vars = require('./vars');
 
-module.exports = {
-  vars: vars
-}
+module.exports = vars;
