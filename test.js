@@ -9,14 +9,28 @@ expect(vars, 'obj').to.have.keys('flat', 'plain', 'flatLight', 'plainLight');
 
 var flats = _.pickBy(vars, (val, key) => key.match('flat'));
 _.mapValues(flats, (val, key) => {
+  var scheme = _.last(_.split(key, 'flat')).toLowerCase();
   expect(val, key).to.be.ok;
   expect(val, key).to.be.an('object');
-  expect(val, key).to.have.any.keys('colorPrimary', 'fontMono');  
+  var shouldHaveKeys = ['colorPrimary', 'fontMono'];
+  if (scheme){
+    shouldHaveKeys = shouldHaveKeys.map(str => {
+      return scheme + _.upperFirst(str);
+    });
+  }
+  expect(val, key).to.have.any.keys(shouldHaveKeys);
 });
 
 var plains = _.pickBy(vars, (val, key) => key.match('plain'));
 _.mapValues(plains, (val, key) => {
+  var scheme = _.last(_.split(key, 'plain')).toLowerCase();
   expect(val, key).to.be.ok;
   expect(val, key).to.be.an('object');
-  expect(val, key).to.have.any.keys('color', 'font');  
+  var shouldHaveKeys = ['color', 'font'];
+  if (scheme){
+    shouldHaveKeys = shouldHaveKeys.map(str => {
+      return scheme + _.upperFirst(str);
+    });
+  }
+  expect(val, key).to.have.any.keys(shouldHaveKeys);
 });

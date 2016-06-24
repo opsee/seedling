@@ -60,15 +60,18 @@ function flatten(initial){
   return data;
 }
 
-function applyScheme(scheme){
-  return _.mapValues(initial, (value, key) => {
+function scheme(scheme){
+  var obj = _.mapValues(initial, function(value, key){
     return _.assign(value, schemes[scheme][key]);
-  })
+  });
+  return _.mapKeys(obj, function(value, key){
+    return scheme + _.capitalize(key);
+  });
 }
 
 module.exports = {
   flat: flatten(initial),
   plain: initial,
-  flatLight: flatten(applyScheme('light')),
-  plainLight: applyScheme('light')
+  flatLight: flatten(scheme('light')),
+  plainLight: scheme('light')
 }
