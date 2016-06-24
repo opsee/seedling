@@ -1,4 +1,6 @@
-var obj = {
+var _ = require('lodash');
+
+var initial = {
   color: {
     background: '#303030',
     primary: '#42A5F5',
@@ -36,10 +38,19 @@ var obj = {
   }
 }
 
-function flatten(obj){
+var schemes = {
+  light: {
+    color: {
+      background: '#f1f1f1',
+      header: '#b3b3b3'
+    }
+  }
+}
+
+function flatten(initial){
   var data = {};
-  Object.keys(obj).forEach(function(key){
-    var parent = obj[key];
+  Object.keys(initial).forEach(function(key){
+    var parent = initial[key];
     var childKeys = Object.keys(parent);
     childKeys.forEach(function(ck){
       var capitalized = ck.charAt(0).toUpperCase() + ck.slice(1);
@@ -49,7 +60,15 @@ function flatten(obj){
   return data;
 }
 
+function applyScheme(scheme){
+  return _.mapValues(initial, (value, key) => {
+    return _.assign(value, schemes[scheme][key]);
+  })
+}
+
 module.exports = {
-  flat: flatten(obj),
-  plain: obj
+  flat: flatten(initial),
+  plain: initial,
+  flatLight: flatten(applyScheme('light')),
+  plainLight: applyScheme('light')
 }
