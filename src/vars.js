@@ -42,7 +42,9 @@ var schemes = {
   light: {
     color: {
       background: '#f1f1f1',
-      header: '#b3b3b3'
+      header: '#303030',
+      text: 'rgb(80, 80, 80)',
+      text2: 'rgb(62, 62, 62)'
     }
   }
 }
@@ -60,18 +62,20 @@ function flatten(initial){
   return data;
 }
 
-function scheme(scheme){
+function scheme(scheme, rename){
   var obj = _.mapValues(initial, function(value, key){
     return _.assign(value, schemes[scheme][key]);
   });
   return _.mapKeys(obj, function(value, key){
-    return scheme + _.capitalize(key);
+    return rename ? scheme + _.capitalize(key) : key;
   });
 }
 
-module.exports = {
+var final = {
   flat: flatten(initial),
   plain: initial,
-  flatLight: flatten(scheme('light')),
+  flatLight: flatten(scheme('light', true)),
   plainLight: scheme('light')
 }
+
+module.exports = final;

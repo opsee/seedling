@@ -27,10 +27,5 @@ _.mapValues(plains, (val, key) => {
   expect(val, key).to.be.ok;
   expect(val, key).to.be.an('object');
   var shouldHaveKeys = ['color', 'font'];
-  if (scheme){
-    shouldHaveKeys = shouldHaveKeys.map(str => {
-      return scheme + _.upperFirst(str);
-    });
-  }
   expect(val, key).to.have.any.keys(shouldHaveKeys);
 });
