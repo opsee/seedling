@@ -33,16 +33,18 @@ var initial = {
     bottomZ2: '0 4px 8px 0 rgba(0, 0, 0, 0.4)'
   },
   transition: {
-    easeOut: '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
-    bounce: '0.4s cubic-bezier(0.25, 1.25, 0.75, 1.25)'
+    easeOut: '0.2s cubic-bezier(0.25, 0.8, 0.25, 1)',
+    bounce: '0.2s cubic-bezier(0.25, 1.25, 0.75, 1.25)'
   }
 }
 
 var schemes = {
   light: {
     color: {
-      background: '#f1f1f1',
-      header: '#303030',
+      background: '#e0e0e0',
+      border: '#E3E3E3',
+      header: '#424242',
+      subheader: '#2A2A2A',
       text: 'rgb(80, 80, 80)',
       text2: 'rgb(62, 62, 62)'
     }
